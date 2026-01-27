@@ -13,14 +13,15 @@ public class TelegramService {
     private static final Logger logger = LoggerFactory.getLogger(TelegramService.class);
     private final WebClient webClient;
 
-    @Value("${TELEGRAM_BOT_TOKEN}")
-    private String telegramToken;
+    private final String telegramToken;
+    private final String chatId;
 
-    @Value("${TELEGRAM_CHAT_ID}")
-    private String chatId;
-
-    public TelegramService(WebClient.Builder builder) {
+    public TelegramService(WebClient.Builder builder,
+                           @Value("${TELEGRAM_BOT_TOKEN}") String telegramToken,
+                           @Value("${TELEGRAM_CHAT_ID}") String chatId) {
         this.webClient = builder.build();
+        this.telegramToken = telegramToken;
+        this.chatId = chatId;
     }
 
     public Mono<String> processar(String mensagem) {
