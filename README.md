@@ -60,4 +60,3 @@ Com o Maven instalado:
 Ou execute a classe principal `AleteiaApplication.java` na sua IDE favorita (IntelliJ IDEA recomendado).
 
 ---
-*Projeto desenvolvido com auxílio de Agente de IA Avançado.*
