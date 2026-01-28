@@ -19,17 +19,17 @@ public class ScheduleService {
         this.resourceLoader = resourceLoader;
     }
 
-    @Scheduled(cron = "0 30 6 * * *")
+    @Scheduled(cron = "0 30 6 * * *", zone = "America/Sao_Paulo")
     public void morningTask() {
         executeTask("classpath:prompt/manha.txt");
     }
 
-    @Scheduled(cron = "0 0 12 * * *")
+    @Scheduled(cron = "0 0 12 * * *", zone = "America/Sao_Paulo")
     public void afternoonTask() {
         executeTask("classpath:prompt/tarde.txt");
     }
 
-    @Scheduled(cron = "0 0 19 * * *")
+    @Scheduled(cron = "0 0 19 * * *", zone = "America/Sao_Paulo")
     public void nightTask() {
         executeTask("classpath:prompt/noite.txt");
     }
